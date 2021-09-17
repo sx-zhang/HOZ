@@ -1,5 +1,4 @@
-# HOZ
-Hierarchical Object-to-Zone Graph for Object Navigation
+# Hierarchical Object-to-Zone Graph for Object Navigation
 ## Setup
 ----
 
