@@ -350,7 +350,7 @@ def parse_arguments():
     parser.add_argument(
         '--data-dir',
         type=str,
-        default='/tmp_data/Scene_Data',
+        default='./datasets/Scene_Data',
         help='where dataset is stored.',
     )
 
