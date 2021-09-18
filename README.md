@@ -20,7 +20,7 @@ Sixian Zhang, Xinhang Song, Yubing Bai, Weijie Li, Yakui Chu, Shuqiang Jiang (Ac
         │   ├── det_feature_categories.hdf5
         │   ├── grid.json
         │   └── optimal_action.json
-        ├── FloorPlan2
+        ├── FloorPlan2/
         └── ...
 ```
 ## HOZ graph Construction
