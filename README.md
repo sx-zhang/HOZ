@@ -23,7 +23,7 @@ The `data` folder should look like this
         ├── FloorPlan2/
         └── ...
 ```
-## HOZ graph Construction
+## HOZ graph Construction (Updating)
 ## Training and Evaluation
 ### Train the baseline model 
 `python main.py --title Basemodel --model BaseModel --workers 12 -–gpu-ids 0`
@@ -34,3 +34,14 @@ The `data` folder should look like this
 ### Evaluate our HOZ-TPN model 
 `python full_eval.py --title TPNHOZ --model MetaMemoryHOZ --results-json HOZTPN.json --gpu-ids 0`
 ## Citing
+If you find this project useful in your research, please consider citing:
+```
+@misc{zhang2021hierarchical,
+      title={Hierarchical Object-to-Zone Graph for Object Navigation}, 
+      author={Sixian Zhang and Xinhang Song and Yubing Bai and Weijie Li and Yakui Chu and Shuqiang Jiang},
+      year={2021},
+      eprint={2109.02066},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+```
