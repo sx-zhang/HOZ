@@ -11,9 +11,9 @@ Sixian Zhang, Xinhang Song, Yubing Bai, Weijie Li, Yakui Chu, Shuqiang Jiang (Ac
 - Download the [dataset](https://drive.google.com/file/d/1kvYvutjqc6SLEO65yQjo8AuU85voT5sC/view), which refers to [ECCV-VN](https://github.com/xiaobaishu0097/ECCV-VN). The offline data is discretized from [AI2THOR](https://ai2thor.allenai.org/) simulator.  
   Your `data` folder should look like this
 ```python
-  Data 
+  data/ 
     └── Scene_Data/
-        ├── FloorPlan1
+        ├── FloorPlan1/
         │   ├── resnet18_featuremap.hdf5
         │   ├── graph.json
         │   ├── visible_object_map_1.5.json
