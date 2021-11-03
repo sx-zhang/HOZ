@@ -1,7 +1,7 @@
 # Hierarchical Object-to-Zone Graph for Object Navigation
 Sixian Zhang, Xinhang Song, Yubing Bai, Weijie Li, Yakui Chu, Shuqiang Jiang (Accepted by ICCV 2021)
 
-[ICCV 2021 Paper]() | 
+[ICCV 2021 Paper](https://openaccess.thecvf.com/content/ICCV2021/html/Zhang_Hierarchical_Object-to-Zone_Graph_for_Object_Navigation_ICCV_2021_paper.html) | 
 [Arxiv Paper](https://arxiv.org/abs/2109.02066) | 
 [Video demo](https://drive.google.com/file/d/1UtTcFRhFZLkqgalKom6_9GpQmsJfXAZC/view)
 ## Setup
@@ -37,12 +37,12 @@ The `data` folder should look like this
 ## Citing
 If you find this project useful in your research, please consider citing:
 ```
-@misc{zhang2021hierarchical,
-      title={Hierarchical Object-to-Zone Graph for Object Navigation}, 
-      author={Sixian Zhang and Xinhang Song and Yubing Bai and Weijie Li and Yakui Chu and Shuqiang Jiang},
-      year={2021},
-      eprint={2109.02066},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+@InProceedings{Zhang_2021_ICCV,
+    author    = {Zhang, Sixian and Song, Xinhang and Bai, Yubing and Li, Weijie and Chu, Yakui and Jiang, Shuqiang},
+    title     = {Hierarchical Object-to-Zone Graph for Object Navigation},
+    booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+    month     = {October},
+    year      = {2021},
+    pages     = {15130-15140}
 }
 ```
