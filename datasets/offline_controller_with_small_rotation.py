@@ -681,9 +681,9 @@ class OfflineControllerWithSmallRotation(BaseController):
                 'r',
             )
 
-            self.cls_masks= self.h5py.File(os.path.join(
-                    '/tmp_data/hoz_masks', self.scene_name, 'class_masks.hdf5'
-                ),'r')
+            # self.cls_masks= self.h5py.File(os.path.join(
+            #         '/tmp_data/hoz_masks', self.scene_name, 'class_masks.hdf5'
+            #     ),'r')
 
             if self.optimal_action_file_name is not None:
                 with open(
@@ -872,12 +872,12 @@ class OfflineControllerWithSmallRotation(BaseController):
     def get_detection_feature(self):
         return self.detection_feature[str(self.state)][()]
 
-    def get_cls_masks(self):
-        try:
-            masks = self.cls_masks[str(self.state)]
-        except KeyError:
-            masks = None
-        return masks
+    # def get_cls_masks(self):
+    #     try:
+    #         masks = self.cls_masks[str(self.state)]
+    #     except KeyError:
+    #         masks = None
+    #     return masks
 
     def all_objects(self):
         if self.using_raw_metadata:
