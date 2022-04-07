@@ -28,6 +28,11 @@ os.environ["OMP_NUM_THREADS"] = "1"
 def main():
     setproctitle.setproctitle("Train/Test Manager")
     args = command_parser.parse_arguments()
+    if args.gpu_ids == -1:
+        args.gpu_ids = [-1]
+    else:
+        torch.cuda.manual_seed(args.seed)
+        mp.set_start_method("spawn")
 
     print('Training started from: {}'.format(
         time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())))
@@ -60,11 +65,11 @@ def main():
     tb_log_dir = args.log_dir + '/' + args.title + '_' + args.phase + '_' + local_start_time_str
     log_writer = SummaryWriter(log_dir=tb_log_dir)
 
-    if args.gpu_ids == -1:
-        args.gpu_ids = [-1]
-    else:
-        torch.cuda.manual_seed(args.seed)
-        mp.set_start_method("spawn")
+    # if args.gpu_ids == -1:
+    #     args.gpu_ids = [-1]
+    # else:
+    #     torch.cuda.manual_seed(args.seed)
+    #     mp.set_start_method("spawn")
 
     shared_model = create_shared_model(args)
 
