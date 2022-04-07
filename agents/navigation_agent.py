@@ -50,19 +50,20 @@ class NavigationAgent(ThorAgent):
 
         self.episode.detection_results.append(
             list(current_detection_feature[self.targets.index(self.episode.target_object), 512:]))
-        if self.episode.current_cls_masks() is None:
-            current_cls_masks = np.zeros((22,7,7))
-        else:
-            current_cls_masks = self.episode.current_cls_masks()[()]
+        # if self.episode.current_cls_masks() is None:
+        #     current_cls_masks = np.zeros((22,7,7))
+        # else:
+        #     current_cls_masks = self.episode.current_cls_masks()[()]
 
         target_embedding = {'appear': current_detection_feature[:, :512],
                             'info': current_detection_feature[:, 512:],
                             'indicator': target_embedding_array,
-                            'masks':current_cls_masks}
+                            }
+                            # 'masks':current_cls_masks}
         target_embedding['appear'] = toFloatTensor(target_embedding['appear'], self.gpu_id)
         target_embedding['info'] = toFloatTensor(target_embedding['info'], self.gpu_id)
         target_embedding['indicator'] = toFloatTensor(target_embedding['indicator'], self.gpu_id)
-        target_embedding['masks'] = toFloatTensor(target_embedding['masks'], self.gpu_id)
+        # target_embedding['masks'] = toFloatTensor(target_embedding['masks'], self.gpu_id)
         model_input.target_class_embedding = target_embedding
 
         model_input.action_probs = self.last_action_probs
@@ -116,7 +117,8 @@ class NavigationAgent(ThorAgent):
         self.last_action_probs = gpuify(
             torch.zeros((1, self.action_space)), self.gpu_id
         )
-        self.model.reset()
+        if hasattr(self.model,'reset'):
+            self.model.reset()
 
     def repackage_hidden(self):
         self.hidden = (self.hidden[0].detach(), self.hidden[1].detach())
